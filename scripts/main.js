@@ -1,4 +1,6 @@
 import { MetalOptions } from './metals.js'
+import { OrderButton } from './orderButton.js'
+import { Orders } from './placedOrders.js'
 import { SizeOptions } from './sizes.js'
 import { StyleOptions } from './styles.js'
 
@@ -8,6 +10,8 @@ const render = async () => {
     const metalOptionsHTML = await MetalOptions()
     const sizeOptionsHTML = await SizeOptions()
     const styleOptionsHTML = await StyleOptions()
+    const buttonHTML = OrderButton()
+    const ordersHTMl = Orders()
 
 
     const composedHTML = `
@@ -31,12 +35,12 @@ const render = async () => {
         </article>
 
         <article class="order">
-
+            ${buttonHTML}
         </article>
 
         <article class="customOrders">
             <h2>Custom Jewelry Orders</h2>
-
+            ${ordersHTMl}
         </article>
     `
 
