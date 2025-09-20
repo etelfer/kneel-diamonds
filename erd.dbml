@@ -1,0 +1,25 @@
+table metals {
+  id int [pk]
+  metal varchar
+  price decimal
+}
+
+table sizes {
+  id int [pk]
+  carets decimal
+  price decimal
+}
+
+table styles {
+  id int [pk]
+  style varchar
+  price decimal
+}
+
+table orders {
+  id int [pk]
+  timeStamp time
+  metalId int [ref: > metals.id]
+  sizeId int [ref: > sizes.id]
+  styleId int [ref: > styles.id]
+}
