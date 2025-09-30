@@ -8,7 +8,7 @@ document.addEventListener("change", handleMetalChoice)
 
 
     const metalsHTML = metals.map((metal => {
-        return `<input type="radio" name="metal" value="${metal.metal}" /> ${metal.metal}`
+        return `<input type="radio" name="metal" value=${metal.id} /> ${metal.metal}`
     })
 )
     return metalsHTML.join("")

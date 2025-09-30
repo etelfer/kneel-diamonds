@@ -11,7 +11,7 @@ const render = async () => {
     const sizeOptionsHTML = await SizeOptions()
     const styleOptionsHTML = await StyleOptions()
     const buttonHTML = OrderButton()
-    const ordersHTMl = Orders()
+    const ordersHTMl = await Orders()
 
 
     const composedHTML = `
@@ -47,3 +47,8 @@ const render = async () => {
     container.innerHTML = composedHTML
 }
 render ()
+
+document.addEventListener("newOrderCreated", event => {
+    console.log("State of data has changed. Regenerating HTML...")
+    render()
+})
